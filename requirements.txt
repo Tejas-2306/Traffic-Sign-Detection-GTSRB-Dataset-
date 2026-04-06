@@ -1,0 +1,10 @@
+tensorflow>=2.0
+opencv-python
+flask
+werkzeug
+numpy
+matplotlib
+scikit-learn
+pandas
+Pillow
+flask

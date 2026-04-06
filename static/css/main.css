@@ -1,0 +1,92 @@
+.image-container {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 1em;
+    margin-bottom: -10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.trafficPhoto {
+    flex: 1; /* Take up remaining space */
+    max-width: 40%; /* Limit width if needed */
+    border-radius: 10px;
+    border-style: double;
+    margin-right: 2%;
+}
+
+.img-preview {
+    flex: 1; /* Take up remaining space */
+    max-width: 40%;
+    margin-top: 2px;
+    height: 415px; /* Adjust this value to make the image smaller */
+    position: relative;
+}
+.img-preview > div {
+    width: 100%;
+    height: 100%;
+    margin-top: -15px;
+    border-style: double;
+    border-radius: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+input[type="file"] {
+    display: none;
+}
+.text-center {
+    text-align: center !important;
+    margin-top: -20px;
+    font-family: 'Playfair Display', serif; 
+    font-weight: bold;
+}
+
+.upload-label {
+    display: inline-block;
+    padding: 12px 30px;
+    background: linear-gradient(to right, #00C9FF, #92FE9D);
+    color: #fff;
+    font-size: 1em;
+    border-radius: 5px;
+    transition: all 0.4s;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.upload-label:hover {
+    background: linear-gradient(to right, #92FE9D, #00C9FF);
+    color: #000;
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+#btn-predict {
+    display: inline-block;
+    padding: 12px 30px;
+    background: linear-gradient(to right, #00C9FF, #92FE9D);
+    color: #fff;
+    font-size: 1em;
+    border-radius: 5px;
+    transition: all 0.4s;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#btn-predict:hover {
+    background: linear-gradient(to right, #92FE9D, #00C9FF);
+    color: #000;
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+}

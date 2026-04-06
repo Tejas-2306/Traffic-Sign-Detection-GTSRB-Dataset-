@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block content %}
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+<style>
+    .form-container {
+        margin-bottom: 10px;
+    }
+
+    .upload-label {
+        display: inline-block;
+        margin-right: 10px; /* Adjust margin as needed */
+        float: left;
+        margin-left: 25%; /* Adjust margin to move slightly left */
+    }
+
+    #imageUpload {
+        display: none; /* Hide the file input box */
+    }
+
+    #btn-predict {
+        display: inline-block;
+        float: right;
+        margin-right: 25%; /* Adjust margin to move slightly right */
+    }
+
+    .answer-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 16px; /* Adjust margin as needed */
+    }
+
+    #result {
+        text-align: center;
+        margin-left: 12%;
+    }
+
+    .trafficPhoto {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .img-preview {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Animated background */
+    body {
+        background-color: #ffffff; /* Initial background color */
+        transition: background-color 0.5s ease; /* Smooth transition */
+    }
+
+    body:hover {
+        background-color: #f5f5fd; /* New background color on hover */
+    }
+</style>
+
+<div class="text-center">
+    <h2 style="font-weight: bold;text-decoration: underline;">Traffic Sign Recognition</h2>
+</div>
+
+<div class="image-container">
+    <img src="../static/yellow-traffic-sign-set-isolated-white-background-97458-258.jpg" 
+        alt="" class="trafficPhoto" style="border-radius: 10px; border-style: double; margin-bottom: 10px;">
+
+    <div class="img-preview">
+        <div id="imagePreview"></div>
+    </div>
+</div>
+
+<div>
+    <div class="form-container">
+        <label for="imageUpload" class="upload-label">
+            Choose
+        </label>
+        <form id="upload-file" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg" style="display: none;">
+        </form>
+        <button type="button" class="btn btn-primary btn-lg" id="btn-predict">Predict!</button>
+    </div>
+
+    <div class="answer-container">
+        <h3 id="result">
+            <span></span>
+        </h3>
+    </div>
+
+    <div class="image-section" style="display:none;">
+        <!-- Image display area for preview -->
+    </div>
+
+    <div class="loader" style="display:none;"></div>
+</div>
+
+{% endblock %}

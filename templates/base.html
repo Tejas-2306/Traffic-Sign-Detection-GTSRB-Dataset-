@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web Application</title>
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <style>
+    @keyframes gradientAnimation {
+        0%, 100% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+    }
+
+    .navbar {
+        height: auto; /* Auto height to fit content */
+        background: linear-gradient(to right, #ff5e62, #ff9966, #ffd56e, #00c6ff, #0072ff, #fc00ff);
+        background-size: 300% 100%;
+        animation: gradientAnimation 3s linear infinite alternate;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar-brand {
+        font-family: 'Playfair Display', serif; /* Playfair Display font */
+        font-size: 30px; /* Adjust font size as needed */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+        overflow: hidden;
+        font-weight:bold;
+        margin: 0 auto; /* Center horizontally */
+        color: black !important; /* Change color to black */
+    }
+
+    .container {
+        max-width: 100%; /* Full width */
+    }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">Image Processing Project</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div id="content" style="margin-top:2em">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="{{ url_for('static', filename='js/main.js') }}" type="text/javascript"></script>
+    </footer>
+</body>
+
+</html>
